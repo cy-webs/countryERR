@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>建国专家--未解密--</title>
+</head>
+<body>
+  <form id="loginForm">
+    <input type="password" id="password" placeholder="密码" autofocus required>
+    <button type="submit">确定</button>
+    <p id="errorMsg" style="display:none;">密码错误</p>
+  </form>
+<script>
+  const form = document.getElementById('loginForm');
+  const pwd = document.getElementById('password');
+  const err = document.getElementById('errorMsg');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    err.style.display = 'none';
+    if (pwd.value.trim() === '30265523') {
+      alert('密钥正确！');
+      window.location.href=REDIRECT_URL='os.html';
+    } else {
+      err.textContent = '密码错误';
+      err.style.display = 'block';
+      pwd.select();
+    }
+  });
+</script>
+</body>
+</html>
